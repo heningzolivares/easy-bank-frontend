@@ -1,12 +1,10 @@
 import Image from 'next/image';
 
 import Button from '../../atoms/Button/Button';
-import Logo from '../../atoms/Logo/Logo';
-import NavLink from '../../atoms/NavLink/NavLink';
 import Paragraph from '../../atoms/Paragraph/Paragraph';
 import Title from '../../atoms/Title/Title';
 
-export default function Navbar() {
+export default function Hero() {
   return (
     <div className="ml-pagecontainer h-80vh relative">
       <div className="flex flex-col w-2/5  justify-center  h-full space-y-6">

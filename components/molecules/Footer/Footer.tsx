@@ -18,39 +18,69 @@ export default function Footer() {
               <Logo type="white" />
               <div className="flex space-x-3">
                 <a>
-                  <Image width={20} height={20} src="/icons/icon-facebook.svg" alt="facebook" />
+                  <Image
+                    width={20}
+                    height={20}
+                    src="/icons/icon-facebook.svg"
+                    className="hover:text-green-300"
+                    alt="facebook"
+                  />
                 </a>
                 <a>
-                  <Image width={20} height={20} src="/icons/icon-youtube.svg" alt="youtube" />
+                  <Image
+                    width={20}
+                    height={20}
+                    src="/icons/icon-youtube.svg"
+                    className="hover:text-green-300"
+                    alt="youtube"
+                  />
                 </a>
                 <a>
-                  <Image width={20} height={20} src="/icons/icon-twitter.svg" alt="twitter" />
+                  <Image
+                    width={20}
+                    height={20}
+                    src="/icons/icon-twitter.svg"
+                    className="hover:text-green-300"
+                    alt="twitter"
+                  />
                 </a>
                 <a>
-                  <Image width={20} height={20} src="/icons/icon-pinterest.svg" alt="pinterest" />
+                  <Image
+                    width={20}
+                    height={20}
+                    src="/icons/icon-pinterest.svg"
+                    className="hover:text-green-300"
+                    alt="pinterest"
+                  />
                 </a>
                 <a>
-                  <Image width={20} height={20} src="/icons/icon-instagram.svg" alt="instagram" />
+                  <Image
+                    width={20}
+                    height={20}
+                    src="/icons/icon-instagram.svg"
+                    className="hover:text-green-300"
+                    alt="instagram"
+                  />
                 </a>
               </div>
             </div>
             <div className="w-2/4 grid grid-cols-2">
-              <a href="/" className="text-white text-sm font-normal">
+              <a href="/" className="text-white text-sm font-normal hover:text-green-300">
                 About Us
               </a>
-              <a href="/" className="text-white text-sm font-normal">
+              <a href="/" className="text-white text-sm font-normal hover:text-green-300">
                 Careers
               </a>
-              <a href="/" className="text-white text-sm font-normal">
+              <a href="/" className="text-white text-sm font-normal hover:text-green-300">
                 Contact
               </a>
-              <a href="/" className="text-white text-sm font-normal">
+              <a href="/" className="text-white text-sm font-normal hover:text-green-300">
                 Support
               </a>
-              <a href="/" className="text-white text-sm font-normal">
+              <a href="/" className="text-white text-sm font-normal hover:text-green-300">
                 Blog
               </a>
-              <a href="/" className="text-white text-sm font-normal">
+              <a href="/" className="text-white text-sm font-normal hover:text-green-300">
                 Privacy Policy
               </a>
             </div>
