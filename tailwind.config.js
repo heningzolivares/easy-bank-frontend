@@ -9,6 +9,9 @@ module.exports = {
       brand: '#2D314D',
       primary: '#2D314E',
       secondary: '#959499',
+      gray: {
+        300: '#99989D',
+      },
       green: {
         500: '#31CF72',
       },
@@ -25,6 +28,9 @@ module.exports = {
       },
       width: {
         btnwidth: '165px',
+      },
+      margin: {
+        pagecontainer: '165px',
       },
     },
   },
