@@ -6,7 +6,7 @@ import Title from '../../atoms/Title/Title';
 
 export default function Features() {
   return (
-    <section className="pt-16 bg-gray-100">
+    <section className="py-16 bg-gray-100">
       <div className="mx-pagecontainer">
         <div className="w-2/4  mb-20">
           <Title variant="h2">Why choose Easybank?</Title>
