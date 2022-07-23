@@ -10,4 +10,7 @@
   .bg-custom-gradient {
     background: linear-gradient(90deg, #31cf72 4.85%, #2cbac7 100%);
   }
+  .badge-custom-gradient {
+    background: linear-gradient(135deg, #33d35e 0%, #2ab6d9 99.58%);
+  }
 }

@@ -10,14 +10,14 @@ const Title = ({ children, variant, ...rest }: TitleType) => {
   const className = clsx('text-primary font-bold text-5xl');
   if (variant === 'h3') {
     return (
-      <h3 className={clsx(className, ' text-3xl', rest.className)} {...rest}>
+      <h3 className={clsx(className, 'text-3xl', rest.className)} {...rest}>
         {children}
       </h3>
     );
   }
   if (variant === 'h2') {
     return (
-      <h2 className={clsx(className, ' text-4xl', rest.className)} {...rest}>
+      <h2 className={clsx(className, 'text-4xl', rest.className)} {...rest}>
         {children}
       </h2>
     );
