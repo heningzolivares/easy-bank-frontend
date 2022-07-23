@@ -22,7 +22,7 @@ export default function Navbar() {
         <Image src="/bg-intro.svg" height={690} width={800} alt="bg frame" layout="fixed" />
       </div>
       <div className="absolute top-3 right-0">
-        <Image src="/image-mockups.png" height={750} width={700} alt="bg frame" layout="fixed" />
+        <Image src="/image-mockups.png" height={700} width={600} alt="bg frame" layout="fixed" />
       </div>
     </div>
   );
