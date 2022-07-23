@@ -2,6 +2,7 @@ import type { NextPage } from 'next';
 
 import Badge from '../components/atoms/Badge/Badge';
 import Button from '../components/atoms/Button/Button';
+import Paragraph from '../components/atoms/Paragraph/Paragraph';
 import Title from '../components/atoms/Title/Title';
 
 const Home: NextPage = () => {
@@ -13,6 +14,11 @@ const Home: NextPage = () => {
       <Badge>
         <p>asd</p>
       </Badge>
+      <Paragraph>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit deserunt numquam quae,
+        aperiam ipsa porro debitis voluptas dignissimos laboriosam, earum laudantium quisquam soluta
+        atque exercitationem molestiae odio a quos. Rem!
+      </Paragraph>
     </div>
   );
 };
