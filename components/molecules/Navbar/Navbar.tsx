@@ -4,7 +4,7 @@ import NavLink from '../../atoms/NavLink/NavLink';
 
 export default function Navbar() {
   return (
-    <nav className="relative flex flex-wrap items-center justify-between  bg-white mb-3 mx-pagecontainer h-20">
+    <nav className="relative flex flex-wrap items-center justify-between  bg-white mx-pagecontainer h-20">
       <div className="flex flex-wrap w-full items-center justify-between">
         <div className="relative flex justify-between">
           <Logo />

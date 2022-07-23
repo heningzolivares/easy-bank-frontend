@@ -32,6 +32,12 @@ module.exports = {
       margin: {
         pagecontainer: '165px',
       },
+      height: {
+        '80vh': '80vh',
+      },
+      lineHeight: {
+        11: '62px',
+      },
     },
   },
   plugins: [],

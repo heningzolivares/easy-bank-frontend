@@ -23,7 +23,7 @@ const Title = ({ children, variant, ...rest }: TitleType) => {
     );
   }
   return (
-    <h1 className={className} {...rest}>
+    <h1 className={clsx(className, ' font-normal leading-11', rest.className)} {...rest}>
       {children}
     </h1>
   );

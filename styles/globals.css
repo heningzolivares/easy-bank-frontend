@@ -16,4 +16,11 @@
   .badge-custom-gradient {
     background: linear-gradient(135deg, #33d35e 0%, #2ab6d9 99.58%);
   }
+  .absolute-hero {
+    position: absolute;
+    left: 5.71%;
+    right: 0.01%;
+    top: -49.86%;
+    bottom: 11.3%;
+  }
 }
