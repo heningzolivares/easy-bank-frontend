@@ -4,10 +4,12 @@ import Badge from '../components/atoms/Badge/Badge';
 import Button from '../components/atoms/Button/Button';
 import Paragraph from '../components/atoms/Paragraph/Paragraph';
 import Title from '../components/atoms/Title/Title';
+import Navbar from '../components/Molecules/Navbar/Navbar';
 
 const Home: NextPage = () => {
   return (
     <div>
+      <Navbar />
       <h1 className="text-3xl font-bold underline">Hello world!</h1>
       <Button>Hello</Button>
       <Title>Foo Title</Title>

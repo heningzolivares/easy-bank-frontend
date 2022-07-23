@@ -1,6 +1,5 @@
-import Image from 'next/image';
-import Link from 'next/link';
-
+import Button from '../../atoms/Button/Button';
+import Logo from '../../atoms/Logo/Logo';
 import NavLink from '../../atoms/NavLink/NavLink';
 
 export default function Navbar() {
@@ -8,11 +7,7 @@ export default function Navbar() {
     <nav className="relative flex flex-wrap items-center justify-between  bg-white mb-3 mx-pagecontainer h-20">
       <div className="flex flex-wrap w-full items-center justify-between">
         <div className="relative flex justify-between">
-          <Link href="/">
-            <a>
-              <Image src={'/logo.svg'} width="129" height="20" alt="logo" />
-            </a>
-          </Link>
+          <Logo />
         </div>
 
         <div className="flex space-x-5 h-20">
@@ -22,6 +17,7 @@ export default function Navbar() {
           <NavLink>Blog</NavLink>
           <NavLink>Careers</NavLink>
         </div>
+        <Button>Request Invite</Button>
       </div>
     </nav>
   );

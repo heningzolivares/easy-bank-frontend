@@ -6,7 +6,7 @@ type ButtonType = {
 const Button = ({ children, ...rest }: ButtonType) => {
   return (
     <button
-      className=" bg-custom-gradient rounded-4xl px-8 text-white text-base font-bold w-btnwidth h-11"
+      className=" bg-custom-gradient rounded-4xl  text-white text-base font-bold w-btnwidth h-11"
       {...rest}
     >
       {children}
