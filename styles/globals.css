@@ -6,3 +6,8 @@
     font-family: 'Public Sans', sans-serif;
   }
 }
+@layer utilities {
+  .bg-custom-gradient {
+    background: linear-gradient(90deg, #31cf72 4.85%, #2cbac7 100%);
+  }
+}
