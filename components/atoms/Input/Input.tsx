@@ -2,9 +2,10 @@ import type { FC, InputHTMLAttributes } from 'react';
 
 type InputProps = {
   label: string;
+  meta?: any;
 } & InputHTMLAttributes<HTMLInputElement>;
 
-const Input: FC<InputProps> = ({ label, id, type = 'text', ...rest }) => {
+const Input: FC<InputProps> = ({ label, id, meta, type = 'text', ...rest }) => {
   return (
     <>
       <label htmlFor={id} className="text-primary font-medium  text-sm mb-1">
