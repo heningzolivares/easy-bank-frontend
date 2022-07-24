@@ -1,14 +1,13 @@
-import ArticlesTable from 'components/molecules/ArticlesTable/ArticlesTable';
-
 import Paragraph from 'components/atoms/Paragraph/Paragraph';
 import Title from 'components/atoms/Title/Title';
 import MainLayout from 'components/layouts/MainLayout';
 import AddArticleForm from 'components/molecules/AddArticleForm/AddArticleForm';
 import Articles from 'components/molecules/Articles/Articles';
+import ArticlesTable from 'components/molecules/ArticlesTable/ArticlesTable';
 import useArticles from 'hooks/useArticles';
 
 export default function AddArticles() {
-  const { data, isLoading } = useArticles();
+  const { isLoading, refetch } = useArticles();
   if (isLoading) {
     return null;
   }
@@ -24,7 +23,7 @@ export default function AddArticles() {
 
           <Title variant="h2">Previous Articles</Title>
           <Paragraph>Review and edit previous blog posts published on to the homepage. </Paragraph>
-          <ArticlesTable />
+          <ArticlesTable onRefresh={() => refetch()} />
         </div>
       </section>
       <Articles isAddDisabled />
