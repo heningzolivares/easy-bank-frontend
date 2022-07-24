@@ -37,6 +37,7 @@ module.exports = {
       },
       width: {
         btnwidth: '165px',
+        formwidth: '690px',
       },
       margin: {
         pagecontainer: '165px',
