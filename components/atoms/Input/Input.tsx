@@ -2,10 +2,9 @@ import type { FC, InputHTMLAttributes } from 'react';
 
 type InputProps = {
   label: string;
-  meta?: any;
 } & InputHTMLAttributes<HTMLInputElement>;
 
-const Input: FC<InputProps> = ({ label, id, meta, type = 'text', ...rest }) => {
+const Input: FC<InputProps> = ({ label, id, type = 'text', ...rest }) => {
   return (
     <>
       <label htmlFor={id} className="text-primary font-medium  text-sm mb-1">
@@ -14,7 +13,8 @@ const Input: FC<InputProps> = ({ label, id, meta, type = 'text', ...rest }) => {
       <input
         type={type}
         id={id}
-        className="bg-white border border-gray-400 text-gray-900 text-sm rounded-md focus:ring-green-300 focus:border-green-300 block w-full p-2.5 mb-5 shadow-sm"
+        className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5    "
+        placeholder="name@flowbite.com"
         {...rest}
       ></input>
     </>
