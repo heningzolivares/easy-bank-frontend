@@ -1,4 +1,7 @@
+import Paragraph from 'components/atoms/Paragraph/Paragraph';
+import Title from 'components/atoms/Title/Title';
 import MainLayout from 'components/layouts/MainLayout';
+import AddArticleForm from 'components/molecules/AddArticleForm/AddArticleForm';
 import Articles from 'components/molecules/Articles/Articles';
 import useArticles from 'hooks/useArticles';
 
@@ -9,7 +12,15 @@ export default function AddArticles() {
   }
   return (
     <MainLayout>
-      <pre>{JSON.stringify(data, null, 2)}</pre>
+      <section className="flex flex-col bg-gray-200">
+        <div className="mx-pagecontainer pt-16 pb-28">
+          <Title variant="h2">Add new blog title</Title>
+          <Paragraph>Publish a new blog article to feature in the Easybank homepage.</Paragraph>
+          <div className="flex justify-center mt-16">
+            <AddArticleForm />
+          </div>
+        </div>
+      </section>
       <Articles isAddDisabled />
     </MainLayout>
   );

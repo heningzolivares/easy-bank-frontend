@@ -1,3 +1,4 @@
+import clsx from 'clsx';
 import { ReactNode, ButtonHTMLAttributes } from 'react';
 
 type ButtonType = {
@@ -6,8 +7,11 @@ type ButtonType = {
 const Button = ({ children, ...rest }: ButtonType) => {
   return (
     <button
-      className="bg-custom-gradient rounded-4xl  text-white text-base font-bold w-btnwidth h-11"
       {...rest}
+      className={clsx(
+        'bg-custom-gradient rounded-4xl  text-white text-base font-bold w-btnwidth h-11 disabled:opacity-50',
+        rest.className
+      )}
     >
       {children}
     </button>
