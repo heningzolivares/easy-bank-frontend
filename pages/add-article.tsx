@@ -21,7 +21,7 @@ export default function AddArticles() {
           </div>
         </div>
       </section>
-      {/* <Articles isAddDisabled /> */}
+      <Articles isAddDisabled />
     </MainLayout>
   );
 }
