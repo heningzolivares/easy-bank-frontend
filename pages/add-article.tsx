@@ -16,12 +16,12 @@ export default function AddArticles() {
         <div className="mx-pagecontainer pt-16 pb-28">
           <Title variant="h2">Add new blog title</Title>
           <Paragraph>Publish a new blog article to feature in the Easybank homepage.</Paragraph>
-        </div>
-        <div className="flex justify-center">
-          <AddArticleForm />
+          <div className="flex justify-center mt-16">
+            <AddArticleForm />
+          </div>
         </div>
       </section>
-      <Articles isAddDisabled />
+      {/* <Articles isAddDisabled /> */}
     </MainLayout>
   );
 }
