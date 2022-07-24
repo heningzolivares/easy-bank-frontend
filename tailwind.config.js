@@ -2,7 +2,11 @@ const defaultTheme = require('tailwindcss/defaultTheme');
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
+  content: [
+    './pages/**/*.{js,ts,jsx,tsx}',
+    './components/**/*.{js,ts,jsx,tsx}',
+    'node_modules/flowbite-react/**/*.{js,jsx,ts,tsx}',
+  ],
   theme: {
     colors: {
       white: '#ffffff',
@@ -12,6 +16,7 @@ module.exports = {
       gray: {
         50: '#FAFAFA',
         100: '#F4F5F7',
+        200: '#F9F9F9',
         300: '#99989D',
       },
       green: {
@@ -28,6 +33,7 @@ module.exports = {
       },
       borderRadius: {
         '4xl': '89px',
+        lx: '41px',
       },
       width: {
         btnwidth: '165px',
@@ -43,5 +49,5 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [require('flowbite/plugin')],
 };
