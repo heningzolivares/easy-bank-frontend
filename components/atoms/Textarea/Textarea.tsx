@@ -1,23 +1,22 @@
-import type { FC, InputHTMLAttributes } from 'react';
+import type { FC, TextareaHTMLAttributes } from 'react';
 
-type InputProps = {
+type TextareaProps = {
   label: string;
-} & InputHTMLAttributes<HTMLInputElement>;
+} & TextareaHTMLAttributes<HTMLTextAreaElement>;
 
-const Input: FC<InputProps> = ({ label, id, type = 'text', ...rest }) => {
+const Textarea: FC<TextareaProps> = ({ label, id, ...rest }) => {
   return (
     <>
       <label htmlFor={id} className="text-primary font-medium  text-sm mb-1">
         {label}
       </label>
-      <input
-        type={type}
-        id={id}
+      <textarea
+        rows={10}
         className="bg-white border border-gray-400 text-gray-900 text-sm rounded-md focus:ring-green-300 focus:border-green-300 block w-full p-2.5 mb-5 shadow-sm"
         {...rest}
-      ></input>
+      ></textarea>
     </>
   );
 };
 
-export default Input;
+export default Textarea;
