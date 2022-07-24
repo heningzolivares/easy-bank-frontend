@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 
 import useArticles from 'hooks/useArticles';
 
@@ -13,7 +14,11 @@ export default function Articles({ isAddDisabled = false }: { isAddDisabled?: bo
       <div className="mx-pagecontainer">
         <div className="flex justify-between  mb-10">
           <Title variant="h2">Latest Articles</Title>
-          {!isAddDisabled && <Button>+ Add New Artcle</Button>}
+          {!isAddDisabled && (
+            <Link href="/add-article">
+              <Button>+ Add New Artcle</Button>
+            </Link>
+          )}
         </div>
 
         <div className="grid grid-cols-4 gap-6">
