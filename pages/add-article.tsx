@@ -1,3 +1,5 @@
+import ArticlesTable from 'components/molecules/ArticlesTable/ArticlesTable';
+
 import Paragraph from 'components/atoms/Paragraph/Paragraph';
 import Title from 'components/atoms/Title/Title';
 import MainLayout from 'components/layouts/MainLayout';
@@ -16,9 +18,13 @@ export default function AddArticles() {
         <div className="mx-pagecontainer pt-16 pb-28">
           <Title variant="h2">Add new blog title</Title>
           <Paragraph>Publish a new blog article to feature in the Easybank homepage.</Paragraph>
-          <div className="flex justify-center mt-16">
+          <div className="flex justify-center my-16">
             <AddArticleForm />
           </div>
+
+          <Title variant="h2">Previous Articles</Title>
+          <Paragraph>Review and edit previous blog posts published on to the homepage. </Paragraph>
+          <ArticlesTable />
         </div>
       </section>
       <Articles isAddDisabled />

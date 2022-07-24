@@ -7,7 +7,7 @@ type ArticlesResponse = {
   message?: string;
 };
 
-type Article = {
+export type Article = {
   author: string;
   content: string;
   date: string;
