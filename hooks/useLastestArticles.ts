@@ -21,16 +21,15 @@ const getArticles = async (): Promise<ArticlesResponse> => {
   return data;
 };
 
-export default function useArticles() {
+export default function useLastestArticles({ max = 4 }: { max?: number }) {
   return useQuery(
-    ['articles', 'all'],
+    ['articles', 'lastest'],
     async () => {
       const articles = await getArticles();
       const orderedArticles = articles.data.sort((a, b) => {
         return new Date(b.date).getTime() - new Date(a.date).getTime();
       });
-
-      return orderedArticles;
+      return orderedArticles.slice(0, max);
     },
     {
       initialData: [],

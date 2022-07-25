@@ -1,14 +1,14 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-import useArticles from 'hooks/useArticles';
+import useLastestArticles from 'hooks/useLastestArticles';
 
 import Button from '../../atoms/Button/Button';
 import Paragraph from '../../atoms/Paragraph/Paragraph';
 import Title from '../../atoms/Title/Title';
 
 export default function Articles({ isAddDisabled = false }: { isAddDisabled?: boolean }) {
-  const { data: articles } = useArticles(4);
+  const { data: articles } = useLastestArticles({ max: 4 });
   return (
     <section className="py-16  bg-gray-50">
       <div className="mx-pagecontainer">
