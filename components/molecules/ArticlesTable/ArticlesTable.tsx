@@ -1,11 +1,13 @@
 import { useMutation } from '@tanstack/react-query';
 import { Field, Form, useFormik } from 'formik';
 import { FC, useState } from 'react';
+import { toast } from 'react-toastify';
 import * as Yup from 'yup';
 
 import TextButton from 'components/atoms/Button/TextButton';
 import Input from 'components/atoms/Input/Input';
 import useArticles, { Article } from 'hooks/useArticles';
+import useLastestArticles from 'hooks/useLastestArticles';
 import instance from 'services/client';
 import { getDate } from 'utils/dateFormat';
 const TableHead = () => (
@@ -35,17 +37,11 @@ const articleValidatorSchema = Yup.object({
   title: Yup.string().min(3, minLength).required(requiredTxt),
   content: Yup.string().min(3, minLength).required(requiredTxt),
 });
-const ArticleRow = ({
-  id,
-  article,
-  onRefresh,
-}: {
-  id: number;
-  article: Article;
-  onRefresh: () => void;
-}) => {
+const ArticleRow = ({ id, article }: { id: number; article: Article }) => {
   const style = id % 2 === 1 ? 'bg-[#F4F5F7]' : '';
   const [isEdit, setIsEdit] = useState(false);
+  const { refetch } = useLastestArticles({ max: 4 });
+  const { refetch: refetchLastArticles } = useArticles();
   const { mutate } = useMutation(
     (values: Article) => {
       return instance.put(`/articles/${values.id}`, {
@@ -56,8 +52,10 @@ const ArticleRow = ({
     },
     {
       onSuccess: () => {
-        onRefresh();
+        refetchLastArticles();
+        refetch();
         setIsEdit(false);
+        toast('Article Updated!');
       },
       onError: (error) => alert(error),
     }
@@ -65,7 +63,8 @@ const ArticleRow = ({
 
   const formik = useFormik({
     initialValues: article,
-    onSubmit: (values, { setSubmitting }) => {
+    validationSchema: articleValidatorSchema,
+    onSubmit: (values) => {
       mutate(values);
     },
   });
@@ -138,7 +137,7 @@ const ArticleRow = ({
   );
 };
 
-const ArticlesTable = ({ onRefresh }: { onRefresh: () => void }) => {
+const ArticlesTable = () => {
   const { data: articles } = useArticles();
   return (
     <div className="mt-12 mb-24">
@@ -150,7 +149,7 @@ const ArticlesTable = ({ onRefresh }: { onRefresh: () => void }) => {
             {articles &&
               articles.length > 0 &&
               articles.map((article: Article, i: number) => (
-                <ArticleRow key={article.id} article={article} id={i} onRefresh={onRefresh} />
+                <ArticleRow key={article.id} article={article} id={i} />
               ))}
           </tbody>
         </table>

@@ -7,7 +7,7 @@ import ArticlesTable from 'components/molecules/ArticlesTable/ArticlesTable';
 import useArticles from 'hooks/useArticles';
 
 export default function AddArticles() {
-  const { isLoading, refetch } = useArticles();
+  const { isLoading } = useArticles();
   if (isLoading) {
     return null;
   }
@@ -23,7 +23,7 @@ export default function AddArticles() {
 
           <Title variant="h2">Previous Articles</Title>
           <Paragraph>Review and edit previous blog posts published on to the homepage. </Paragraph>
-          <ArticlesTable onRefresh={() => refetch()} />
+          <ArticlesTable />
         </div>
       </section>
       <Articles isAddDisabled />

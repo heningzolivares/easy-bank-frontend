@@ -1,6 +1,7 @@
 import { useMutation } from '@tanstack/react-query';
 import { Formik, Form, FormikHelpers, Field } from 'formik';
 import { FC } from 'react';
+import { toast } from 'react-toastify';
 import * as Yup from 'yup';
 
 import Button from 'components/atoms/Button/Button';
@@ -9,6 +10,7 @@ import Input from 'components/atoms/Input/Input';
 import Loading from 'components/atoms/Loading/Loading';
 import Textarea from 'components/atoms/Textarea/Textarea';
 import useArticles from 'hooks/useArticles';
+import useLastestArticles from 'hooks/useLastestArticles';
 import instance from 'services/client';
 
 type Values = {
@@ -32,7 +34,8 @@ const articleValidatorSchema = Yup.object({
 });
 
 const AddArticleForm: FC = () => {
-  const { refetch } = useArticles(4);
+  const { refetch } = useArticles();
+  const { refetch: refetchLastArticles } = useLastestArticles({ max: 4 });
   const { mutate, isLoading } = useMutation(
     (values: Values) => {
       return instance.post('/articles', values);
@@ -51,6 +54,8 @@ const AddArticleForm: FC = () => {
               mutate(values, {
                 onSuccess: () => {
                   refetch();
+                  refetchLastArticles();
+                  toast('Article Added!');
                   resetForm();
                 },
               });
